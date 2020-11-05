@@ -20,8 +20,14 @@ public class AppTest
     }
 
     @Test
-    public void sumWorks()
+    public void intSumWorks()
     {
         assertEquals(App.sum(1, 2), 3);
+    }
+
+    @Test
+    public void fractionSumWorks()
+    {
+        assertEquals(App.sum(1, 2, 3, 2), 2.0, 0.00001);
     }
 }
