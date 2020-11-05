@@ -7,6 +7,9 @@ JAVA_DOCKER = $(RUN_DOCKER) java
 generate:
 	$(MVN_DOCKER) archetype:generate -DgroupId=net.unir.devops -DartifactId=unir-maven -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
 
+clean:
+	$(MVN_DOCKER) clean
+
 compile:
 	$(MVN_DOCKER) compile
 
@@ -15,6 +18,9 @@ package:
 
 test:
 	$(MVN_DOCKER) test
+
+tree:
+	$(MVN_DOCKER) dependency:tree
 
 run:
 	$(JAVA_DOCKER) -cp target/unir-maven-1.0-SNAPSHOT.jar net.unir.devops.App
